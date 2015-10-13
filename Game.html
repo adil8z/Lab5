@@ -1,0 +1,437 @@
+<DOCTYPE!>
+
+<html>
+<head>
+<script type="text/javascript">
+
+            function leftArrowPressed() {		    
+                var element = document.getElementById("packimage");								
+				  element.style.left = parseInt(element.style.left) - 30 + 'px';
+				
+            }
+
+            function rightArrowPressed() {			
+                var element = document.getElementById("packimage");
+                element.style.left = parseInt(element.style.left) + 30 + 'px';
+				checkcollision();		 
+            
+			}
+
+            function upArrowPressed() {				
+                var element = document.getElementById("packimage");
+                element.style.top = parseInt(element.style.top) - 30 + 'px';
+            }
+
+            function downArrowPressed() {		
+                var element = document.getElementById("packimage");
+                element.style.top = parseInt(element.style.top) + 30 + 'px';
+		
+			}
+			score = 0;
+			function Points(){
+			score= score +5;  
+			document.getElementById("points").innerText=" Score: " + score;
+			
+			}
+			
+			function checkcollision(){
+			
+			 var element = document.getElementById("packimage");
+             x = parseInt(element.offsetLeft);
+			 y = parseInt(element.offsetTop);
+			 
+			 var food1 = document.getElementById("pacfood1");
+             x1 = parseInt(food1.offsetLeft);
+			 y1 = parseInt(food1.offsetTop);
+			 
+			 var food2 = document.getElementById("pacfood2");
+             x2 = parseInt(food2.offsetLeft);
+			 y2 = parseInt(food2.offsetTop);
+	
+			 
+			 var food3 = document.getElementById("pacfood3");
+             x3 = parseInt(food3.offsetLeft);
+			 y3 = parseInt(food3.offsetTop);
+			 
+			 var food4 = document.getElementById("pacfood4");
+             x4 = parseInt(food4.offsetLeft);
+			 y4 = parseInt(food4.offsetTop);
+			 
+			 var food5 = document.getElementById("pacfood5");
+             x5 = parseInt(food5.offsetLeft);
+			 y5 = parseInt(food5.offsetTop);
+			 
+			 var food6 = document.getElementById("pacfood6");
+             x6 = parseInt(food6.offsetLeft);
+			 y6 = parseInt(food6.offsetTop);
+			 
+			 var food7 = document.getElementById("pacfood7");
+             x7 = parseInt(food7.offsetLeft);
+			 y7 = parseInt(food7.offsetTop);
+			 
+			 var wall1 = document.getElementById("slab1");
+             w1 = parseInt(wall1.offsetLeft);
+			 h1 = parseInt(wall1.offsetTop);
+			 
+			 var wall2 = document.getElementById("slab2");
+             w2 = parseInt(wall2.offsetLeft);
+			 h2 = parseInt(wall2.offsetTop);
+			 
+			 var wall3 = document.getElementById("slab3");
+             w3 = parseInt(wall3.offsetLeft);
+			 h3 = parseInt(wall3.offsetTop);
+			 
+			 var wall4 = document.getElementById("slab4");
+             w4 = parseInt(wall4.offsetLeft);
+			 h4 = parseInt(wall4.offsetTop);
+			 
+			 var wall5 = document.getElementById("bound1");
+             w5 = parseInt(wall5.offsetLeft);
+			 h5 = parseInt(wall5.offsetTop);
+			 
+			 var wall6 = document.getElementById("bound2");
+             w6 = parseInt(wall6.offsetLeft);
+			 h6 = parseInt(wall6.offsetTop);
+			 
+			 var wall7 = document.getElementById("bound3");
+             w7 = parseInt(wall7.offsetLeft);
+			 h7 = parseInt(wall7.offsetTop);
+			 
+			 var wall8 = document.getElementById("slab5");
+             w8 = parseInt(wall8.offsetLeft);
+			 h8 = parseInt(wall8.offsetTop);
+			 
+				
+				if(((x>= w2)&&(x <= (w2 +  wall2.width)))&& 
+				((y>h2) && (y  <= (h2 +  wall2.height)))){
+				
+			alert("Game over");
+			
+			
+				}
+				if((( x>= w1)&&(x <= (w1 +  wall1.width)))&& 
+				((y>=h1) && (y  <= (h1 +  wall1.height)))){
+				
+				element.style.left=10;
+				element.style.top=10;
+			
+				}
+				
+				if(((x>= w3)&&(x <= (w3 +  wall3.width)))&& 
+				((y>h3) && (y  <= (h3 +  wall3.height)))){
+				
+				element.style.left=10;
+				element.style.top=10;
+			
+				}
+				
+				if(((x>= w4)&&(x <= (w4 +  wall4.width)))&& 
+				((y>h4) && (y  <= (h4 +  wall4.height)))){
+				
+				element.style.left=10;
+				element.style.top=10;
+			
+				}
+				
+				if(((x>= w5)&&(x <= (w5 +  wall5.width)))&& 
+				((y>h5) && (y  <= (h5 +  wall5.height)))){
+				
+				element.style.left=10;
+				element.style.top=10;
+			
+				}
+				
+				if(((x>= w6)&&(x <= (w6 +  wall6.width)))&& 
+				((y>h6) && (y  <= (h6 +  wall6.height)))){
+				
+				element.style.left=10;
+				element.style.top=10;
+			
+				}
+				
+				if(((x>= w7)&&(x <= (w7 +  wall7.width)))&& 
+				((y>h7) && (y  <= (h7 +  wall7.height)))){
+				
+				element.style.left=10;
+				element.style.top=10;
+			
+				}
+				
+				if(((x>= w8)&&(x <= (w8 +  wall8.width)))&& 
+				((y>h7) && (y  <= (h8 +  wall8.height)))){
+				
+				element.style.left=10;
+				element.style.top=10;
+			
+				}
+				
+				
+			 
+			 if(((x>= x1)&&(x <= (x1 +  food1.width)))&& 
+				((y>=y1) && (y  <= (y1 +  food1.height)))){
+				
+				food1.width =0;
+				food1.height=0;
+				Points();
+			
+				}
+				
+				if(((x>= x2)&&(x <= (x2 + food2.width)))&& 
+				((y>=y2) && (y  <= (y2 +  food2.height)))){
+				
+				food2.width =0;
+				food2.height=0;
+				Points();
+			
+				}
+				
+				if(((x>= x3)&&(x <= (x3 + food3.width)))&& 
+				((y>=y3) && (y  <= (y3 +  food3.height)))){
+				
+				food3.width =0;
+				food3.height=0;
+				Points();
+			
+				}
+				
+				if(((x>= x4)&&(x <= (x4 + food4.width)))&& 
+				((y>=y4) && (y  <= (y4 +  food4.height)))){
+				
+				food4.width =0;
+				food4.height=0;
+				Points();
+			
+				}
+				
+				if(((x>= x5)&&(x <= (x5 +  food5.width)))&& 
+				((y>=y5) && (y  <= (y5 +  food5.height)))){
+				
+				food5.width =0;
+				food5.height=0;
+				Points();
+			
+				}
+				
+				if(((x>= x6)&&(x <= (x6 +  food6.width)))&& 
+				((y>=y6) && (y  <= (y6 +  food6.height)))){
+				
+				food6.width =0;
+				food6.height=0;
+				Points();
+			
+				}
+				
+				if(((x>= x7)&&(x <= (x7 +  food7.width)))&& 
+				((y>=y7) && (y  <= (y7 +  food7.height)))){
+				
+				food7.width =0;
+				food7.height=0;
+				Points();
+			
+				}
+			 
+			 
+			
+				
+			}
+
+            function moveSelection(event) {                    
+                switch (event.keyCode) {
+                    case 37:
+                        leftArrowPressed();
+						checkcollision();
+						
+					
+						
+                    break;
+
+                    case 39:
+				
+                       rightArrowPressed();
+					   checkcollision();
+					   
+						 
+                    break;
+
+                    case 38:
+                        upArrowPressed();
+						checkcollision();
+										
+                    break;
+
+                    case 40:
+					
+                       downArrowPressed();
+					   checkcollision();
+					
+                    break;
+                }
+            };
+			
+			
+		
+			function gameLoop()
+        {
+            // change position based on speed
+            moveSelection();
+            setTimeout("gameLoop()",10);
+			
+		
+        }
+		
+		
+</script>
+</head>
+<style>
+
+
+body{
+font-family: 'Seaweed Script', cursive;
+//background-image : url("backimage.png");
+//background-position: center;
+//background-repeat: no-repeat;
+
+}
+
+
+				
+#circle{
+
+border-radius: 50%;  
+background: #8AC007;     
+width: 20px;   
+height: 20px;
+
+}
+
+
+
+
+#myDIV{
+    width:100% ;
+    height:100% ;
+    position: absolute;
+    background-image: url('clouds100.png');
+    background-position: top left;
+    -webkit-animation: slideshow 10s linear infinite;
+    animation: slideshow 5s linear infinite;
+}
+
+@keyframes slideshow{
+from  {slideshow-position: 0 0;}
+to {background-position: 1700% 0 ;}
+}
+
+
+
+</style>
+
+<div id="myDIV">
+
+<body onload="gameLoop();" onkeydown="" onkeyup="moveSelection(event)">
+
+<div>
+<img  id="packimage" src="planeicon.png" style="position: absolute; left: 25; right: 15; top: 70; bottom: auto;" width= "60" height="60" >
+</div>
+<h1 ><center>Grab Coins Avoid Objects<center></h1>
+<img  id="pacfood1" src="coin.png" style="position: absolute; left: 300; right: 50; top: 350; bottom: auto;" width= "30" height="30" >
+<img  id="pacfood2" src="coin.png" style="position: absolute; left: 1100; right: 50; top: 350; bottom: auto;" width= "30" height="30" >
+<img  id="pacfood3" src="coin.png" style="position: absolute; left: 500; right: 50; top: 100; bottom: auto;" width= "30" height="30" >
+<img  id="pacfood4" src="coin.png" style="position: absolute; left: 540; right: 50; top: 600; bottom: auto;" width= "30" height="30" >
+<img  id="pacfood5" src="coin.png" style="position: absolute; left: 200; right: 50; top: 100; bottom: auto;" width= "30" height="30" >
+<img  id="pacfood6" src="coin.png" style="position: absolute; left: 720; right: 50; top: 350; bottom: auto;" width= "30" height="30" >
+<img  id="pacfood7" src="coin.png" style="position: absolute; left: 100; right: 50; top: 400; bottom: auto;" width= "30" height="30" >
+
+
+
+
+<img  id="slab1" src="wall.png" style="position: absolute; left: 300; right: 70; top: 310; bottom: auto;" width= "500" height="20" >
+<img  id="slab2" src="miss.png" style="position: absolute; left: 300; right: 50; top: 430; bottom: auto;" width= "100" height="100" >
+<img  id="slab3" src="wall.png" style="position: absolute; left: 300; right: 50; top: 100; bottom: auto;" width= "20" height="120" >
+<img  id="slab4" src="mario2.png" style="position: absolute; left: 700; right: 50; top: 500; bottom: auto;" width= "100" height="100" >
+
+<img  id="slab5" src="mario1.png" style="position: absolute; left: 900; right: 50; top: 100; bottom: auto;" width= "140" height="100" >
+
+
+
+<img  id="bound1" src="wall.png" style="position: absolute; left: 5; right: 50; top: 600; bottom: auto;" width= "800" height="0.1" >
+<img  id="bound2" src="wall.png" style="position: absolute; left: 5; right: 50; top: 5; bottom: auto;" width= "0.1" height="500" >
+<img  id="bound3" src="wall.png" style="position: absolute; left: 1300; right: 50; top: 5; bottom: auto;" width= "0.1" height="500" >
+
+
+<div id="scores">
+<font face="Arial Black" size="100px" align="right">
+<p><span id="points" style="background-color: black; width:500px; color:white;"></span></p></div>
+</div>
+<!--<img id="scream" width="50" height="50" src="enemy.png" alt="The Scream">-->
+
+
+
+<!--<canvas id="myCanvas" width="1200" height="500" style="border:1px solid black;"> </canvas>-->
+
+
+<script>
+//var c = document.getElementById("myCanvas");
+//var ctx = c.getContext("2d");
+//var img1 = document.getElementById("scream");
+//ctx.drawImage(img1, 10, 10);
+//ctx.fillStyle = "#000000";
+
+//ctx.fillRect(0,70,120,10);
+//ctx.fillRect(0,200,120,10);
+//ctx.fillRect(250,100,10,80);
+//ctx.fillRect(250,100,50,10);
+//ctx.fillRect(380,150,10,150);
+//ctx.fillRect(550,70,10,150);
+/*
+function drawFood(xPos, yPos,width,height)
+{
+ctx.beginPath();
+ctx.rect(xPos,yPos, width, height);
+ctx.fillStyle = 'green';
+ctx.fill();
+
+}	
+
+//create array and insert x and y coordinates in it
+			foodArray= new Array();
+			foodArray.push({x:220,y:50,w:30,h:30});
+			foodArray.push({x:300,y:50,w:30,h:30});
+			foodArray.push({x:600,y:200,w:30,h:30});
+			foodArray.push({x:600,y:100,w:30,h:30});
+			//draw the food circles
+			for(i=0; i<4; i++){
+			drawFood(foodArray[i].x,foodArray[i].y,foodArray[i].w,foodArray[i].h);}
+		
+
+//element.style.width=  parseInt(element.style.width);
+//element.style.height=  parseInt(element.style.height);
+
+/*
+if ((x1 <= x2 && x1+w1 >= x2) &&
+		(y1 <= y2 && y1+h1 >= y2))
+
+		
+		 f ((x1 >= x2 && x1<= x2+somenumber) &&
+		(y1 >= y2 && y1<= y2+somenumber))
+		
+*//*
+
+var element = document.getElementById("packimage");
+element.style.top = parseInt(element.style.top);
+element.style.left=  parseInt(element.style.left);
+
+for(i=0;i<4; i++){
+if(((element.style.left>=foodArray[i].x)&&(element.style.left <= (foodArray[i].x +foodArray[i].w)))&& 
+ ((element.style.top>=foodArray[i].y) && (element.style.top  <= (foodArray[i].y + element.height))))
+ 
+{foodArray[i].width =0;
+foodArray[i].height =0;}
+}
+*/
+
+
+</script>
+
+</body>
+</html>
